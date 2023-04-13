@@ -22,7 +22,6 @@ namespace Financeira.Controllers
         [HttpPost("novo")]
         public async Task<ActionResult> Adicionar([FromBody] FinanciamentoViewModel financiamento)
         {
-           
             return Ok(_financiamentoService.AdicionarFinanciamento(financiamento));
 
         }

@@ -1,6 +1,7 @@
 ﻿using Financeira.Domain.Entity;
 using Financeira.Repository.Context;
 using Financeira.Repository.Repositorios.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,26 @@ namespace Financeira.Repository.Repositorios
                 throw new Exception(ex.Message);
             }
             
+        }
+
+        public async Task UpdateParcela(Parcela parcela, int id)
+        {
+            try
+            {
+                var parcelaBase = _context.Parcelas.Where(x => x.Id == id).FirstOrDefault();
+                if (parcelaBase != null)
+                {
+                    parcelaBase.DataPagamento = parcela.DataPagamento;
+                    _context.Update(parcelaBase);
+                    _context.SaveChanges();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

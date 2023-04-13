@@ -64,15 +64,16 @@ namespace Financeira.Service
                 parcelas.IdFinanciamento = idFinanciamento;
                 parcelas.NumeroDeParcela = i + 1;
                 parcelas.Valor = financiamento.ValorCredito / financiamento.QuantidadeParcelas;
+                parcelas.DataPagamento = null;
                 if (i > 0)
                 {
                     parcelas.DataVencimento =  financiamento.DataPrimeiroVencimento.AddMonths(i);
-                    parcelas.DataPagamento =  financiamento.DataPrimeiroVencimento.AddMonths(i);
+                   
                 }
                 else
                 {
                     parcelas.DataVencimento = financiamento.DataPrimeiroVencimento;
-                    parcelas.DataPagamento =  financiamento.DataPrimeiroVencimento.AddMonths(i);
+                   
                 }
                 _parcelaRepository.AdicionarParcela(parcelas);
             }
