@@ -91,7 +91,7 @@ namespace Financeira.Service
                 mensagem = "Data fora do permitido";
                 return (false, mensagem);
             }
-            if (financiamento.QuantidadeParcelas > 72 || financiamento.QuantidadeParcelas < 5)
+                if (financiamento.QuantidadeParcelas > 72 || financiamento.QuantidadeParcelas < 5)
             {
                 mensagem = "Número máximo de parcelas é 72 e o mínimo é 5 ";
                 return (false, mensagem);

@@ -26,14 +26,14 @@ namespace Financeira.Controllers
 
 
         [HttpGet("buscar-estado")]
-        public async Task<ActionResult> BuscarPorEstado([FromBody] ClienteViewModel cliente)
+        public async Task<ActionResult> BuscarPorEstado()
         {
             return Ok(_clienteService.ListarClientesByEstado());
         }
 
 
         [HttpGet("buscar-parcelas")]
-        public async Task<ActionResult> BuscarPorParcelasPagas([FromBody] ClienteViewModel cliente)
+        public async Task<ActionResult> BuscarPorParcelasPagas()
         {
             return Ok(_clienteService.ListarClientesQuePossuemParcelasPagasSemAtraso());
         }
