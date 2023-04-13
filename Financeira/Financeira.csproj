@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Financeira.Repository\Financeira.Repository.csproj" />
+    <ProjectReference Include="..\Financeira.Service\Financeira.Service.csproj" />
   </ItemGroup>
 
 </Project>

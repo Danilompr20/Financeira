@@ -9,7 +9,7 @@ namespace Financeira.Domain.Enum
 {
     public enum TipoFinanciamento
     {
-        [EnumMember(Value ="Direto")]
+       [EnumMember(Value ="Direto")]
         CREDITO_DIRETO,
         [EnumMember(Value = "Consignado")]
         CREDITO_CONSIGNADO,
