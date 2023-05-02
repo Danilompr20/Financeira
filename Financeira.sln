@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financeira", "Financeira\Financeira.csproj", "{D4FBC667-74EA-4B69-B894-70A537D45A5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Financeira", "Financeira\Financeira.csproj", "{D4FBC667-74EA-4B69-B894-70A537D45A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financeira.Domain", "Financeira.Domain\Financeira.Domain.csproj", "{A93FEBCB-495A-4A27-990B-FCFA8D8C7D35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Financeira.Domain", "Financeira.Domain\Financeira.Domain.csproj", "{A93FEBCB-495A-4A27-990B-FCFA8D8C7D35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financeira.Service", "Financeira.Service\Financeira.Service.csproj", "{12779A9F-75A0-495D-9250-BF15300EBF5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Financeira.Service", "Financeira.Service\Financeira.Service.csproj", "{12779A9F-75A0-495D-9250-BF15300EBF5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financeira.Repository", "Financeira.Repository\Financeira.Repository.csproj", "{046B9318-9483-426B-9688-DF9BEF5E362A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Financeira.Repository", "Financeira.Repository\Financeira.Repository.csproj", "{046B9318-9483-426B-9688-DF9BEF5E362A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rabbit", "Rabbit", "{BD5984B5-8023-4DA7-AC02-B8FDEA774C4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBus", "MessageBus\MessageBus.csproj", "{5980696D-43F7-4B6D-8D03-B4EF07B4CEE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{046B9318-9483-426B-9688-DF9BEF5E362A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{046B9318-9483-426B-9688-DF9BEF5E362A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{046B9318-9483-426B-9688-DF9BEF5E362A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5980696D-43F7-4B6D-8D03-B4EF07B4CEE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5980696D-43F7-4B6D-8D03-B4EF07B4CEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5980696D-43F7-4B6D-8D03-B4EF07B4CEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5980696D-43F7-4B6D-8D03-B4EF07B4CEE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5980696D-43F7-4B6D-8D03-B4EF07B4CEE5} = {BD5984B5-8023-4DA7-AC02-B8FDEA774C4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FD70CEEE-CF4B-452F-A5E1-C975D32214B3}
