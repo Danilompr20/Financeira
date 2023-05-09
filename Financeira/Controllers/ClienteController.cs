@@ -23,7 +23,7 @@ namespace Financeira.Controllers
         public async Task<ActionResult> Adicionar([FromBody] ClienteViewModel cliente)
         {
             await _clienteService.AdicionarCliente(cliente);
-            _rabbitSender.SendMessage(cliente, "clientequeue");
+            //_rabbitSender.SendMessage(cliente, "clientequeue");
             return Ok("Sucesso");
 
         }

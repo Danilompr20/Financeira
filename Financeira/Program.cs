@@ -24,7 +24,7 @@ builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IParcelaService, ParcelaService>();
 builder.Services.AddScoped<IFinanciamentoService, FinanciamentoService>();
 builder.Services.AddScoped<IRabbitSender, RabitSender>();
-builder.Services.AddHostedService<RabbitMQMessageConsumer>();
+//builder.Services.AddHostedService<RabbitMQMessageConsumer>();
 
 
 

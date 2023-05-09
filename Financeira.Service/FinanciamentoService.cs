@@ -40,9 +40,10 @@ namespace Financeira.Service
                 financiamentoAprovado.DataUltimoFinanciamento = financiamento.DataPrimeiroVencimento.AddMonths(financiamento.QuantidadeParcelas-1);
                 financiamentoAprovado.CPF = financiamento.CPF;
                 financiamentoAprovado.ValorTotal = valorTotal;
+                salvarParcelas(financiamento, financiamentoAprovado);
                 var idFinanciamento = _financiamentoRepository.AdicionarFinanciamento(financiamentoAprovado);
                 financiamento.ValorCredito = valorTotal;
-                salvarParcelas(financiamento, idFinanciamento);
+               
 
                 response.Status = "Aprovado";
                 response.ValorDoJuros = juros;
@@ -55,13 +56,14 @@ namespace Financeira.Service
             }
 
         }
-        private void salvarParcelas(FinanciamentoViewModel financiamento, int idFinanciamento)
+        private void salvarParcelas(FinanciamentoViewModel financiamento,   Financiamento fin)
         {
+            fin.Parcelas = new List<Parcela>();
             for (int i = 0; i < financiamento.QuantidadeParcelas;i++)
             {
                 var parcelas = new Parcela();
 
-                parcelas.IdFinanciamento = idFinanciamento;
+               // parcelas.IdFinanciamento = idFinanciamento;
                 parcelas.NumeroDeParcela = i + 1;
                 parcelas.Valor = financiamento.ValorCredito / financiamento.QuantidadeParcelas;
                 parcelas.DataPagamento = null;
@@ -75,7 +77,9 @@ namespace Financeira.Service
                     parcelas.DataVencimento = financiamento.DataPrimeiroVencimento;
                    
                 }
-                _parcelaRepository.AdicionarParcela(parcelas);
+               
+                fin.Parcelas.Add(parcelas);
+                //_parcelaRepository.AdicionarParcela(parcelas);
             }
         }
         private (bool, string) validacoes(FinanciamentoViewModel financiamento)
