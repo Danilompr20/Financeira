@@ -2,11 +2,6 @@
 using Financeira.Domain.ViewModel;
 using Financeira.Repository.Repositorios.Interfaces;
 using Financeira.Service.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Financeira.Service
 {

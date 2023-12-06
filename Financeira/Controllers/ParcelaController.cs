@@ -1,8 +1,6 @@
-﻿using Financeira.Domain.Entity;
-using Financeira.Domain.ViewModel;
-using Financeira.Service;
+﻿using Financeira.Domain.ViewModel;
 using Financeira.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Financeira.Controllers

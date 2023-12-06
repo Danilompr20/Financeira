@@ -1,8 +1,5 @@
 ﻿using Financeira.Domain.ViewModel;
-using Financeira.RabbitMQSender;
-using Financeira.Service;
 using Financeira.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Financeira.Controllers
@@ -12,18 +9,17 @@ namespace Financeira.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClienteService _clienteService;
-        private readonly IRabbitSender _rabbitSender;
-        public ClienteController( IClienteService clienteService, IRabbitSender rabbitSender)
+       
+        public ClienteController( IClienteService clienteService)
         {
             _clienteService = clienteService;
-            _rabbitSender = rabbitSender;
+           
         }
 
         [HttpPost("novo-cliente")]
         public async Task<ActionResult> Adicionar([FromBody] ClienteViewModel cliente)
         {
             await _clienteService.AdicionarCliente(cliente);
-            //_rabbitSender.SendMessage(cliente, "clientequeue");
             return Ok("Sucesso");
 
         }

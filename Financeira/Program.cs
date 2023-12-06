@@ -1,5 +1,4 @@
-using Financeira.Controllers.MessageConsumer;
-using Financeira.RabbitMQSender;
+using Financeira.Filter;
 using Financeira.Repository.Context;
 using Financeira.Repository.Repositorios;
 using Financeira.Repository.Repositorios.Interfaces;
@@ -23,9 +22,9 @@ builder.Services.AddScoped<IfinanciamentoRepository, FinanciamentoRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IParcelaService, ParcelaService>();
 builder.Services.AddScoped<IFinanciamentoService, FinanciamentoService>();
-builder.Services.AddScoped<IRabbitSender, RabitSender>();
-//builder.Services.AddHostedService<RabbitMQMessageConsumer>();
 
+//builder.Services.AddHostedService<RabbitMQMessageConsumer>();
+builder.Services.AddMvc(options => options.Filters.Add(typeof(FiltroExceptions)));
 
 
 var app = builder.Build();
