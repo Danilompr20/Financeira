@@ -4,15 +4,15 @@ namespace Financeira.Service.ExceptionUtil
 {
     public  class RespostaErro
     {
-        public List<string> MensagemErro { get; set; }
+        public List<string> Reprovado { get; set; }
         public RespostaErro(string mensagemErro)
         {
-            MensagemErro = new List<string>();
-            MensagemErro.Add(mensagemErro);
+            Reprovado = new List<string>();
+            Reprovado.Add(mensagemErro);
         }
         public RespostaErro(List<string> mensagemErro)
         {
-            MensagemErro = mensagemErro;
+            Reprovado = mensagemErro;
         }
     }
 }

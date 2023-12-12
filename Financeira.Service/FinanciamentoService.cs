@@ -28,7 +28,7 @@ namespace Financeira.Service
                 var result = validator.Validate(financiamento);
                 if (!result.IsValid)
                 {
-                    response.Status = $"Reprovado {result.Errors.Select(x=> x.ErrorMessage).ToString()}";
+                       response.Status = $"Reprovado {result.Errors.Select(x=> x.ErrorMessage).ToString()}";
                        response.ValorDoJuros = juros;
                        response.ValorComjuros = valorTotal;
                     throw new ErroDeValidacaoException(result.Errors.Select(x => x.ErrorMessage).ToList());
